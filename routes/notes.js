@@ -30,4 +30,14 @@ notes.post('/', (req, res) => {
   }
 });
 
+notes.delete('/:id', (req, res) => {
+  readFromFile('./db/db.json').then((data) => {
+    const parsedData = JSON.parse(data)
+    const filteredData = parsedData.filter(filt => filt.id === req.params.id);
+    filt.id.splice(req.params);
+  });
+});
+
+
 module.exports = notes;
+
