@@ -14,10 +14,12 @@
   ## learn
   Aspects of back-end development
   ## stack
-  HTML,CSS,JavaScript
+  HTML, CSS, JavaScript
   ## license
-  
+  MIT
   ## challenges
   General difficulty with understanding back-end development
+  ## features
+  When the save button is clicked the note and its title are saved. Notes can be accessed again by clicking on them. When the delete button is clicked and the page is refreshed the note will be deleted.
   ## credits
   Phil Loy, Shawn Tschoepe

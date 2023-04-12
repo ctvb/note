@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 // GET Route for retrieving all the tips
@@ -33,8 +33,8 @@ notes.post('/', (req, res) => {
 notes.delete('/:id', (req, res) => {
   readFromFile('./db/db.json').then((data) => {
     const parsedData = JSON.parse(data)
-    const filteredData = parsedData.filter(filt => filt.id === req.params.id);
-    filt.id.splice(req.params);
+    const filteredData = parsedData.filter(filt => filt.id !== req.params.id);
+    writeToFile('./db/db.json', filteredData)
   });
 });
 
